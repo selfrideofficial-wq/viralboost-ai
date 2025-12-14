@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ViralBoost AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>🎥 ViralBoost <span>AI</span></h2>
+  <button class="login">Login</button>
+</header>
+
+<section class="hero">
+  <h1>Turn Any Video<br>Into a Viral Hit.<br>Instantly.</h1>
+  <p>The 3-tab input box is a step ahead line from YouTube desktop version</p>
+</section>
+
+<div class="tabs">
+  <button onclick="showTab('idea')">Write Video Idea</button>
+  <button onclick="showTab('link')">Paste YouTube Link</button>
+</div>
+
+<div id="idea" class="tab">
+  <textarea placeholder="Write your video idea here..."></textarea>
+  <button class="generate" onclick="generate()">Generate Viral Ideas</button>
+</div>
+
+<div id="link" class="tab hidden">
+  <input type="text" placeholder="Paste YouTube link">
+  <button class="generate" onclick="generate()">Generate Viral Ideas</button>
+</div>
+
+<div id="result" class="hidden">
+  <h3>✅ Free Result</h3>
+  <p><b>Title:</b> I Tried This YouTube Trick for 7 Days…</p>
+
+  <h3>🔒 Locked Content</h3>
+  <p>Watch video to unlock more titles & thumbnails</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
