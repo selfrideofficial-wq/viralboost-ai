@@ -115,13 +115,6 @@ async function generateViralIdeas() {
         // 4. result UI
         displayResults(jsonContent);
 
-    } catch (error) {
-        console.error("Gemini API Error:", error);
-        alert("Failed to connect to AI. Check your API Key or Network.");
-    }
-
     btn.innerText = 'Generate Viral Ideas';
 }
-
-// (बाकी का displayResults() फंक्शन जिसमें लॉक/अनलॉक लॉजिक है, वह नीचे होगा)
     
