@@ -1,48 +1,214 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-  margin: 0;
-  font-family: Arial;
-  background: #0b0b0b;
-  color: white;
-  text-align: center;
+    background-color: #050505; /* Very Dark Background */
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
+/* Navbar */
+nav {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
 }
 
-span {
-  color: orange;
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.hero h1 {
-  font-size: 32px;
+.logo span {
+    color: #ff9900; /* Orange Accent */
 }
 
-.tabs button {
-  margin: 10px;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
+.login-btn {
+    background: transparent;
+    border: 1px solid #333;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-textarea, input {
-  width: 80%;
-  height: 100px;
-  margin: 15px;
-  border-radius: 10px;
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
 }
 
-.generate {
-  background: linear-gradient(to right, red, orange);
-  border: none;
-  padding: 15px 30px;
-  border-radius: 30px;
-  color: white;
-  font-size: 16px;
+h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    font-weight: 800;
 }
 
-.hidden {
-  display: none;
+.subtext {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
 }
+
+/* Input Card (The Box) */
+.input-card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Tabs */
+.tabs-header {
+    display: flex;
+    border-bottom: 1px solid #222;
+}
+
+.tab {
+    flex: 1;
+    padding: 15px 5px;
+    font-size: 0.8rem;
+    color: #666;
+    cursor: pointer;
+    background: #111;
+    transition: 0.3s;
+}
+
+/* The Active Tab Design from Image */
+.tab.active {
+    color: white;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,0,85,0.1) 100%);
+    border-bottom: 2px solid #ff0055;
+}
+
+/* Tab Content Areas */
+.tab-content {
+    padding: 20px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Upload Drop Zone */
+.upload-zone {
+    border: 2px dashed #444;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+}
+
+.upload-zone i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* Text Input Styling */
+.text-input-zone {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    background: #0a0a0a;
+    border: 1px solid #333;
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    resize: none;
+}
+textarea { height: 100%; }
+
+/* The Gradient Button */
+.generate-btn {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    /* The Pink-to-Orange Gradient */
+    background: linear-gradient(90deg, #ff0055 0%, #ff5500 50%, #ff9900 100%);
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.generate-btn:active {
+    transform: scale(0.98);
+}
+
+.saved-link {
+    color: #666;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 30px;
+}
+
+/* Results Styling */
+.results-container {
+    background: #111;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid #222;
+}
+.results-container h2 { margin-bottom: 15px; color: #ff9900; }
+
+.result-item {
+    background: #222;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Locked Items Blur */
+.locked {
+    filter: blur(4px);
+    opacity: 0.6;
+    user-select: none;
+}
+
+.unlock-btn {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: gold;
+    border: 1px solid gold;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
