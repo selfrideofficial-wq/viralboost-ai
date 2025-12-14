@@ -78,7 +78,7 @@ function watchAd() {
         alert("Success! All ideas unlocked.");
     }, 3000);
 }
-const API_KEY = 'AIzaSyARJS7m88i2TyLGAx1Y5InGh-6UWM5i2U8'; //
+const API_KEY = 'AIzaSyA-wE0wFH7SdLVL0TxAcrNLKP8lYClTw0I'; //
 async function generateViralIdeas() {
     const input = document.getElementById('ideaInput').value || document.getElementById('linkInput').value;
     const btn = document.querySelector('.generate-btn');
@@ -112,8 +112,8 @@ async function generateViralIdeas() {
         const rawText = data.candidates[0].content.parts[0].text.trim();
         const jsonContent = JSON.parse(rawText.match(/\{[\s\S]*\}/)[0]); // Finds and parses the JSON block
         
-        // 4. Display Results (This function will use jsonContent.titles, etc.)
-        displayResults(jsonContent); 
+        // 4. result UI
+        displayResults(jsonContent);
 
     } catch (error) {
         console.error("Gemini API Error:", error);
