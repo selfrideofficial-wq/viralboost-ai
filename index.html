@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViralBoost AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <i class="fab fa-youtube" style="color: red;"></i> ViralBoost <span>AI</span>
+        </div>
+        <button class="login-btn">Login</button>
+    </nav>
+
+    <div class="hero-section">
+        <h1>'Turn Any Video <br> Into a Viral Hit. <br> Instantly.'</h1>
+        <p class="subtext">The 3-tab input box is a step ahead line from <br> YouTube desktop version</p>
+
+        <div class="input-card">
+            
+            <div class="tabs-header">
+                <div class="tab active" onclick="switchTab('upload')">Upload Video</div>
+                <div class="tab" onclick="switchTab('link')">Paste YouTube Link</div>
+                <div class="tab" onclick="switchTab('idea')">Write Video Idea</div>
+            </div>
+
+            <div id="content-upload" class="tab-content active-content">
+                <div class="upload-zone">
+                    <i class="fas fa-upload"></i>
+                    <h3>Upload Video</h3>
+                    <p>Drop zone or your upload here</p>
+                </div>
+            </div>
+
+            <div id="content-link" class="tab-content" style="display:none;">
+                <div class="text-input-zone">
+                    <i class="fas fa-link"></i>
+                    <input type="text" id="linkInput" placeholder="Paste your YouTube video link here...">
+                </div>
+            </div>
+
+            <div id="content-idea" class="tab-content" style="display:none;">
+                <div class="text-input-zone">
+                    <i class="fas fa-lightbulb"></i>
+                    <textarea id="ideaInput" placeholder="Describe your video idea... (e.g., How to cook pasta)"></textarea>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="generate-btn" onclick="generateViralIdeas()">
+            Generate Viral Ideas
+        </button>
+
+        <a href="#" class="saved-link">Login to access saved videos</a>
+
+        <div id="results-dashboard" class="results-container" style="display:none;">
+            <h2>Viral Suggestions</h2>
+            
+            <div class="result-category">
+                <h3><i class="fas fa-heading"></i> Titles</h3>
+                <div id="titles-list"></div>
+            </div>
+            
+            <button id="unlock-btn" class="unlock-btn" onclick="watchAd()">
+                <i class="fas fa-play-circle"></i> Watch Ad to Unlock All
+            </button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
