@@ -87,3 +87,41 @@ async function generateViralIdeas() {
 
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analyzing AI Magic...';
 
+    // 1. Prompt (यह AI को बताता है कि क्या करना है)
+    const prompt = `
+    Act as a YouTube Expert. For the video idea: "${input}", return EXACTLY 
+    a JSON object with four arrays named 'titles', 'descriptions', 'tags', and 'thumbnails'. 
+    Each array must have exactly 4 strings. The thumbnails array must contain 4 specific 
+    visual prompts for an image generation AI.
+    `;
+
+    try {
+        // 2. The API Call (Key का उपयोग यहाँ होता है)
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ 
+                contents: [{ parts: [{ text: prompt }] }],
+                config: { temperature: 0.8 } 
+            })
+        });
+
+        const data = await response.json();
+        
+        // 3. Extracting the JSON Text from the API response
+        const rawText = data.candidates[0].content.parts[0].text.trim();
+        const jsonContent = JSON.parse(rawText.match(/\{[\s\S]*\}/)[0]); // Finds and parses the JSON block
+        
+        // 4. Display Results (This function will use jsonContent.titles, etc.)
+        displayResults(jsonContent); 
+
+    } catch (error) {
+        console.error("Gemini API Error:", error);
+        alert("Failed to connect to AI. Check your API Key or Network.");
+    }
+
+    btn.innerText = 'Generate Viral Ideas';
+}
+
+// (बाकी का displayResults() फंक्शन जिसमें लॉक/अनलॉक लॉजिक है, वह नीचे होगा)
+    
