@@ -78,7 +78,7 @@ function watchAd() {
         alert("Success! All ideas unlocked.");
     }, 3000);
 }
-const API_KEY = 'AIzaSyA-wE0wFH7SdLVL0TxAcrNLKP8lYClTw0I'; //
+const API_KEY = ''; //
 async function generateViralIdeas() {
     const input = document.getElementById('ideaInput').value || document.getElementById('linkInput').value;
     const btn = document.querySelector('.generate-btn');
